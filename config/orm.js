@@ -1,3 +1,5 @@
+
+// Import MSQL connection
 var connection = require("../config/connection.js");
 
 var orm = {
@@ -19,7 +21,7 @@ var orm = {
             cb(result);
         });
     },
-
+    
     updateOne: function (tableName, colVal, boolean, colName, condition, cb) {
         var queryString = `UPDATE ${tableName} SET ${colVal}=${boolean} WHERE ${colName}=${condition}`;
         connection.query(queryString, function(err, result){

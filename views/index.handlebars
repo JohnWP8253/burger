@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="jumbotron text-center bg-danger text-white"></div>
+    <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img src="/public/images/burger-outline-filled.png" </h1>
+    <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border border-danger">
+            <div class="card-header bg-danger text-white">
+                Can I take burger order, please?
+            </div>
+            {{!-- Create/add burger form --}}
+            <div class="card-body">
+                <form class="create-form">
+                    <div class="form-group">
+                        <label for="burger">Place your order here:</label>
+                        <input type="text" class="form-control" id="toGoBurger" placeholder="Write order here">
+                    </div>
+                    <button class="btn btb-danger" type="submit">Place order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

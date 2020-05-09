@@ -3,15 +3,14 @@
 
 // Require dependencies
 var express = require("express");
-var connection = require("../config/connection.js");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
 // GET REQUEST grab data from all the burgers from the burgers table.
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
-    dataToDisplay = data.slice(Math.max(data.length - 10, 1));
-    res.render("index", { burgers: dataToDisplay });
+    var burgerBurger = { burgers: data };
+    res.render("index", burgerBurger);
   });
 });
 

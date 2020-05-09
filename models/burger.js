@@ -21,7 +21,7 @@ var burger = {
     orm.updateOne(colVal, id, function (res) {
       cb(res);
     });
-  },
+  }
 };
 
 module.exports = burger;

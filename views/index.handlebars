@@ -1,14 +1,15 @@
 <div class="container">
     <div class="jumbotron text-center bg-danger text-white"></div>
     <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img src="/public/images/burger-outline-filled.png" </h1>
-    <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
+        <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
 </div>
 
+{{!-- Row to enter in desired burger --}}
 <div class="row">
     <div class="col-md-12">
         <div class="card border border-danger">
             <div class="card-header bg-danger text-white">
-                Can I take burger order, please?
+                Can I take your burger order, please?
             </div>
             {{!-- Create/add burger form --}}
             <div class="card-body">
@@ -23,3 +24,55 @@
         </div>
     </div>
 </div>
+
+{{!-- Section  with non-devoured burgers and devoured burgers --}}
+
+<div class="row mt-4">
+    <div class="col-md-6 mt-4">
+        <div class="card border border-danger">
+            <div class="card-header bg-success text-white">
+                Burgers
+            </div>
+            {{!-- Card to hold burger entries --}}
+            <div class="card-body">
+                {{#each burgers}}
+                {{#unless devoured}}
+              
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-4">
+        <div class="card devoured-card">
+            <div class="card-header text-white" id="devoured-card-header">Devoured Burgers</div>
+            {{!-- Card for the devoured burgers --}}
+            <div class="card-body">
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-devoured devour=true}}
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- footer --}}
+<div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card footer">
+        <div class="card-body footer-body text-white">
+          <h5 class="card-title text-white">EAT IT Burger!</h5>
+          <p class="card-text">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
+          <a href="https://github.com/JohnWP8253/burger" class="btn btn-danger mr-2" target="_blank">GitHub Repo</a>
+          <a href="https://www.linkedin.com/in/john-pendergrass-2a700a62/" class="btn btn-primary" target="_blank">LinkedIn</a>
+          <br>
+          <br>
+          <small></small>
+        </div>
+      </div>
+    </div>
+</div>
+
+

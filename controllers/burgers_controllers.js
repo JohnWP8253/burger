@@ -22,9 +22,10 @@ router.post("/insertOne", function (req, res) {
 });
 
 // POST REQUEST - updating if a burger has been devoured or not
-router.post("/updateOne/:id", function (req, res) {
-  var condition = `id = ${req.params.id}`;
-  burger.updateOne({ devoured: req.body.devoured }, condition, function () {
+router.post("/updateOne", function (req, res) {
+  // var condition = `id = ${req.params.id}`;
+  var id = req.body.id;
+  burger.updateOne(id, function () {
     res.redirect("/");
   });
 });

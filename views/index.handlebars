@@ -38,8 +38,9 @@
                 {{#each burgers}}
                 {{#unless this.devoured}}
                 <p>{{this.burger_name}}</p>
-                <form action="/updateOne/:{{this.id}}" method="POST">
-                <input type="hidden" name="devoured" value="1">
+                <form action="/updateOne" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <input type="hidden" name="devoured" value='1'>
                 <button class="btn btn-danger" type="submit">Eat da burger!</button>
                 </form>
                 <br>

@@ -26,7 +26,7 @@ var orm = {
     },
     // function to update if the burger has been devoured or not
     updateOne: function (tableName, colVal, boolean, colName, condition, cb) {
-        var queryString = `UPDATE ${tableName} SET ${colVal}=${boolean} WHERE ${colName}=${condition}`;
+        var queryString = `UPDATE ${tableName} SET ${colVal}='${boolean}' WHERE ${colName}=${condition}`;
         connection.query(queryString, function(err, result){
             if (err) {
                 throw err;
@@ -35,5 +35,4 @@ var orm = {
         });
     }
 }
-
 module.exports = orm;

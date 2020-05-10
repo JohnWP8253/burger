@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron text-center bg-danger text-white"></div>
-    <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img src="/public/images/burger-outline-filled.png" </h1>
+    <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img src="/images/burger-outline-filled.png" class="img-fluid" alt="Responsive image"></h1>
         <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
 </div>
 
@@ -18,7 +18,7 @@
                         <label for="burger">Place your order here:</label>
                         <input type="text" class="form-control" id="toGoBurger" placeholder="Write order here">
                     </div>
-                    <button class="btn btb-danger" type="submit">Place order</button>
+                    <button class="btn btn-danger" type="submit">Place order</button>
                 </form>
             </div>
         </div>
@@ -29,7 +29,7 @@
 
 <div class="row mt-4">
     <div class="col-md-6 mt-4">
-        <div class="card border border-danger">
+        <div class="card border border-secondary">
             <div class="card-header bg-success text-white">
                 Burgers
             </div>
@@ -37,15 +37,14 @@
             <div class="card-body">
                 {{#each burgers}}
                 {{#unless devoured}}
-              
                 {{/unless}}
                 {{/each}}
             </div>
         </div>
     </div>
     <div class="col-md-6 mt-4">
-        <div class="card devoured-card">
-            <div class="card-header text-white" id="devoured-card-header">Devoured Burgers</div>
+        <div class="card border border-secondary devoured-card">
+            <div class="card-header bg-danger text-white" id="devoured-card-header">Devoured Burgers</div>
             {{!-- Card for the devoured burgers --}}
             <div class="card-body">
                 {{#each burgers}}

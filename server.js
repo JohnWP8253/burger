@@ -1,6 +1,8 @@
 var express = require("express");
 var exhbs = require("express-handlebars");
 var routes = require("./controllers/burgers_controllers.js");
+var bodyParser = require("body-parser");
+
 
 
 var PORT = process.env.PORT || 8383;
@@ -10,13 +12,13 @@ var app = express();
 // Serve static content for app from public directory
 app.use(express.static("./public"));
 
-// Parse application body
+// Parse JSON
+app.use(bodyParser.json());
 app.use(
-  express.urlencoded({
-    extended: true,
+  bodyParser.urlencoded({
+    extended: true
   })
 );
-app.use(express.json());
 
 // handlebars run using main for content
 app.engine(

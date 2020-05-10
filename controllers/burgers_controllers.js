@@ -15,14 +15,14 @@ router.get("/", function (req, res) {
 });
 
 // POST REQUEST - inserting a burger into the db through user input
-router.post("/insertburger", function (req, res) {
+router.post("/insertOne", function (req, res) {
   burger.insertOne(req.body.burger_name, function (addon) {
     res.redirect("/");
   });
 });
 
 // POST REQUEST - updating if a burger has been devoured or not
-router.post("/update/:id", function (req, res) {
+router.post("/updateOne/:id", function (req, res) {
   var condition = `id = ${req.params.id}`;
   burger.updateOne({ devoured: req.body.devoured }, condition, function () {
     res.redirect("/");

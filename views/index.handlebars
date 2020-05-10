@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron text-center bg-danger text-white"></div>
-    <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img src="/images/burger-outline-filled.png" class="img-fluid" alt="Responsive image"></h1>
+    <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img id= "baby-burger" src="/images/burger-outline-filled.png" class="img-fluid" alt="Responsive image"></h1>
         <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
 </div>
 
@@ -13,10 +13,10 @@
             </div>
             {{!-- Create/add burger form --}}
             <div class="card-body">
-                <form class="create-form">
+                <form class="create-update-form" action="/insertOne" method="POST">
                     <div class="form-group">
                         <label for="burger">Place your order here:</label>
-                        <input type="text" class="form-control" id="toGoBurger" placeholder="Write order here">
+                        <input type="text" class="form-control" name="burger_name" id="toGoBurger" placeholder="Write order here">
                     </div>
                     <button class="btn btn-danger" type="submit">Place order</button>
                 </form>
@@ -36,7 +36,13 @@
             {{!-- Card to hold burger entries --}}
             <div class="card-body">
                 {{#each burgers}}
-                {{#unless devoured}}
+                {{#unless this.devoured}}
+                <p>{{this.burger_name}}</p>
+                <form action="/updateOne/:{{this.id}}" method="POST">
+                <input type="hidden" name="devoured" value="1">
+                <button class="btn btn-danger" type="submit">Eat da burger!</button>
+                </form>
+                <br>
                 {{/unless}}
                 {{/each}}
             </div>
@@ -48,8 +54,12 @@
             {{!-- Card for the devoured burgers --}}
             <div class="card-body">
                 {{#each burgers}}
-                {{#if devoured}}
-                {{> burgers/burger-devoured devour=true}}
+                {{#if this.devoured}}
+                <div class="devourBurger">
+                    <p>
+                        {{this.burger_name}}
+                    </p>
+                </div>
                 {{/if}}
                 {{/each}}
             </div>

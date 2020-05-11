@@ -2,6 +2,6 @@ body {
     background: url("../images/amirali-mirhashemian-jh5XyK4Rr3Y-unsplash.jpg");
 }
 
-#baby-burger {
-    
+.jumbotron {
+    font-family: 'Modak', cursive;
 }

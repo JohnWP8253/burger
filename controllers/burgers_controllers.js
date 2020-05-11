@@ -23,7 +23,6 @@ router.post("/insertOne", function (req, res) {
 
 // POST REQUEST - updating if a burger has been devoured or not
 router.post("/updateOne/:id", function (req, res) {
-  // var condition = `id = ${req.params.id}`;
   var colVal = "id";
   var id = req.params.id;
   burger.updateOne(colVal, id, function () {

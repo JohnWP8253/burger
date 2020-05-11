@@ -1,7 +1,7 @@
 <div class="container">
     <div class="jumbotron text-center bg-danger text-white"></div>
     <h1 class="display-4" id="app-title">EAT IT Burger Bar!<img id= "baby-burger" src="/images/burger-outline-filled.png" class="img-fluid" alt="Responsive image"></h1>
-        <p class="lead">Welcome to EAT IT Burger Bar, home of the best burgers around!</p>
+        <p class="lead">Welcome to EAT DAT Burger Bar, home of the best burgers around!</p>
 </div>
 
 {{!-- Row to enter in desired burger --}}
@@ -41,7 +41,7 @@
                 <form action="/updateOne/{{this.id}}" method="POST">
                 <input type="hidden" name="id" value="{{this.id}}">
                 <input type="hidden" name="devoured" value='1'>
-                <button class="btn btn-danger" type="submit">Eat da burger!</button>
+                <button class="btn btn-outline-success" type="submit">Eat dat!<i class="fas fa-utensils"></i></button>
                 </form>
                 <br>
                 {{/unless}}
@@ -51,7 +51,7 @@
     </div>
     <div class="col-md-6 mt-4">
         <div class="card border border-secondary devoured-card">
-            <div class="card-header bg-danger text-white" id="devoured-card-header">Devoured Burgers</div>
+            <div class="card-header bg-secondary text-white" id="devoured-card-header">Devoured Burgers</div>
             {{!-- Card for the devoured burgers --}}
             <div class="card-body">
                 {{#each burgers}}

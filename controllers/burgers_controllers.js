@@ -22,10 +22,11 @@ router.post("/insertOne", function (req, res) {
 });
 
 // POST REQUEST - updating if a burger has been devoured or not
-router.post("/updateOne", function (req, res) {
+router.post("/updateOne/:id", function (req, res) {
   // var condition = `id = ${req.params.id}`;
-  var id = req.body.id;
-  burger.updateOne(id, function () {
+  var colVal = "id";
+  var id = req.params.id;
+  burger.updateOne(colVal, id, function () {
     res.redirect("/");
   });
 });

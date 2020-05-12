@@ -7,8 +7,8 @@ John Pendergrass
 A restaurant app that lets users input name of burgers that they's like to eat. It will store the burgers in a database connected to MySQL that will list and log if the burgers have been eaten or not. 
 
 ## Links
-Github repo: https://github.com/JohnWP8253/burger
-Heroku link: https://jp-burger-app.herokuapp.com
+* Github repo: https://github.com/JohnWP8253/burger
+* Heroku link: https://jp-burger-app.herokuapp.com
 
 ## Code Explanation
 The `server.js` file sets up:

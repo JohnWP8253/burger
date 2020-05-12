@@ -19,7 +19,10 @@ The `server.js` file sets up:
 
 The `config` folder contains:
 * `connection.js` which contains the ports for both the mysql database for heroku and the local host. 
-* `orm.js` the object-relational mapping which contains the functions: `selectAll` which shows the burgers in the database, `insertOne` which adds the user burger into the database, and `updateOne` which updates the boolean to the burger being devoured. 
+* `orm.js` the object-relational mapping which contains the functions: 
+**`selectAll` which shows the burgers in the database
+**`insertOne` which adds the user burger into the database
+** `updateOne` which updates the boolean to the burger being devoured. 
 
 The `controllers` folder contains `burgers_controller.js` which grabs the data from the user input using the GET request. Then uses a POST request to insert the input into the database. Lastly, uses a POST request which updates if the burger has been eaten or not.
 

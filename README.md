@@ -32,7 +32,8 @@ The `views` folder holds the handlebars files `main.handlebars` and `index.handl
     * JavaScript
     * Node.js
     * HTML/CSS
-    * Materialize.css
+    * Handlebars
+    * Body-parser
     * Express.js
 
 ## Shoutouts
